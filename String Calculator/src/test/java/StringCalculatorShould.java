@@ -33,4 +33,15 @@ class StringCalculatorShould {
 
         Assertions.assertEquals(actual,sum);
     }
+
+    @ParameterizedTest
+    @CsvSource(value = {
+            "'1\n2', 3",
+    })
+    void returnSumOnStringNewlineSeperated(String string, int sum) {
+
+        int actual = stringCalculator.add(string);
+
+        Assertions.assertEquals(actual,sum);
+    }
 }

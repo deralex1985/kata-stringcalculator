@@ -4,7 +4,7 @@ public class StringCalculator {
         if (numbers == "") {
             return 0;
         }
-        String[] numbersList = numbers.split(",");
+        String[] numbersList = numbers.split("[,\n]");
 
         int sum = 0;
         for(String number: numbersList){
