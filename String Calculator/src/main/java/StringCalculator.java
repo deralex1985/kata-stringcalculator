@@ -4,6 +4,12 @@ public class StringCalculator {
         if (numbers == "") {
             return 0;
         }
-        return Integer.parseInt(numbers);
+        String[] numbersList = numbers.split(",");
+
+        int sum = 0;
+        for(String number: numbersList){
+            sum += Integer.parseInt(number);
+        }
+        return sum;
     }
 }

@@ -23,12 +23,11 @@ class StringCalculatorShould {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "1,'1'",
-            "2,'2'",
-            "1,2,'3'",
+            "'1', 1",
+            "'2', 2",
+            "'1,2', 3",
             })
-    void return1OnStringOne(String string, int sum) {
-        int expected = 1;
+    void returnSumOnString(String string, int sum) {
 
         int actual = stringCalculator.add(string);
 
