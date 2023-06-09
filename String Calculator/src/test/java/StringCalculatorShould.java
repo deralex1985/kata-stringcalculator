@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class StringCalculatorShould {
 
@@ -43,5 +45,11 @@ class StringCalculatorShould {
         int actual = stringCalculator.add(string);
 
         Assertions.assertEquals(actual,sum);
+    }
+
+    @Test
+    void throwExeptionOnInvalidInput() {
+        assertThrows(NumberFormatException.class,
+                () -> stringCalculator.add("1,\n2"));
     }
 }
